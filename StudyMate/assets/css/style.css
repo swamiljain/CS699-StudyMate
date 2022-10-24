@@ -1,3 +1,6 @@
-.body{
-    color: aqua;
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #151138;
+    color: #fff;
 }

@@ -1,4 +1,54 @@
-<h1>Registrations Page</h1>
+{%extends 'base.html' %}
+
+{%block content%}
+<style>
+    form {
+        position: relative;
+        width: 600px;
+        height: 569px;
+        border-style: solid;
+        border-color:white;
+        border-radius: 10px;
+        margin-top:5% ;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    input{
+        width: 58%;
+        height: 23px;
+        background: #faf7f7;
+        justify-content: center;
+        display: flex;
+        margin: 5px auto;
+        padding: 5px;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        font-family: Arial, "Font Awesome 5 Free";
+    }
+    button{
+        width: 57%;
+        height: 38px;
+        margin: 13px auto;
+        justify-content: center;
+        display: block;
+        color: #fff;
+        background: #7359a1;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 45px;
+        outline: none;
+        border: none;
+        border-radius: 7px;
+    }
+    ::placeholder{
+        color:red;
+        font-size: 18px;
+    }
+</style>
+
+
+<h1>SIGN UP</h1>
 {% for message in messages %}
     <p>{{message}}</p>
 {% endfor %}
@@ -6,8 +56,8 @@
 {% if flag %}
     <form action="" method="post">
         {% csrf_token %}
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
+        <input type="text" name="username" placeholder="&#xf007 Username">
+        <input type="password" name="password" placeholder="Password">
         <input type="submit">
     </form>
     <p><a href="{% url 'register' %}">Register</a></p>
@@ -15,20 +65,18 @@
 {% else %}
 <form action="" method="post">
     {% csrf_token %}
-    <p><input type="text" name="f_name" placeholder=" enter firstname" id=""></p>
-    <p><input type="text" name="l_name" placeholder="enter lastname"></p>
-    <p><input type="text" name="u_name" placeholder="enter username"></p>
-    <p><input type="email" name="email" placeholder="enter email"> </p>
-    <p><input type="password" name="pass1" placeholder="Enter password"></p>
-    <p><input type="password" name="pass2" placeholder="Reenter password"></p>
-    <input type="submit">
+    <p><input type="text" name="f_name" placeholder="Firstname" id=""></p>
+    <p><input type="text" name="l_name" placeholder="Lastname"></p>
+    <p><input type="text" name="u_name" placeholder="&#xf007 Username"></p>
+    <p><input type="email" name="email" placeholder="&#xf0e0 Email"> </p>
+    <p><input type="password" name="pass1" placeholder="&#xf024 Password"></p>
+    <p><input type="password" name="pass2" placeholder="&#xf502 Re-enter Password"></p>
+    <button type="">Submit</button>
     <!-- {{form.as_p}} -->
-    <input type="submit">
-    
-
 </form>
-    <p>Alredy signed UP</p>
+    <p>Alredy A User</p>
     <p><a href="{% url 'login' %}">Login</a></p>
 
 
 {% endif %}
+{% endblock %}

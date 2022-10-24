@@ -10,8 +10,15 @@
 </head>
 <body>
     
-    <h1>Hello WOrld</h1>
-    <h2>Welcome {{name}}</h2>
-    <li><a href="account/register">Register</a></li>
+    <h1>Hello </h1>
+    {% if request.user.is_authenticated %}
+        <h3>{{request.user}}</h3>
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+    
+    {% else %}
+    <li><a href="{% url 'register' %}">Register</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
+
+    {% endif %}
 </body>
 </html>

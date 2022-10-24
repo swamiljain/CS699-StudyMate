@@ -1,3 +1,5 @@
+.gitignore
 django-env
 *.*settings.py
 settings.py
+db.sqlite3

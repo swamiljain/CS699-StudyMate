@@ -1,7 +1,10 @@
 body{
-    background-color: azure;
+    justify-content: center;
+    background-color: #151138;
+    color: #fff;
 }
-
 h1{
+    margin-left: auto;
+    margin-right: auto;
     color: red;
 }
